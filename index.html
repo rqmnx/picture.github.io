@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表情包生成器 - 制作你的专属表情包</title>
+    <meta name="description" content="在线表情包生成器，上传图片添加文字，轻松制作个性化表情包">
+    <meta name="keywords" content="表情包,生成器,图片处理,文字叠加">
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">
+                <i class="fas fa-smile"></i>
+                表情包生成器
+            </h1>
+            <p class="header-subtitle">上传图片，添加文字，轻松制作你的专属表情包</p>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main">
+        <div class="container">
+            <!-- 功能区域 -->
+            <div class="function-area">
+                <!-- 图片上传区域 -->
+                <section class="upload-section" id="uploadSection">
+                    <h2 class="section-title">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        上传图片
+                    </h2>
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <i class="fas fa-image upload-icon"></i>
+                            <p class="upload-text">点击或拖拽图片到此处</p>
+                            <p class="upload-hint">支持 JPG、PNG 格式，最大 5MB</p>
+                            <input type="file" id="imageInput" accept="image/*" class="file-input">
+                            <button type="button" class="upload-btn" onclick="document.getElementById('imageInput').click()">
+                                选择图片
+                            </button>
+                        </div>
+                    </div>
+                    <div class="upload-preview" id="uploadPreview" style="display: none;">
+                        <img id="previewImage" alt="预览图片">
+                        <button type="button" class="remove-btn" id="removeImage">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- 文字设置区域 -->
+                <section class="text-section" id="textSection" style="display: none;">
+                    <h2 class="section-title">
+                        <i class="fas fa-font"></i>
+                        添加文字
+                    </h2>
+                    <div class="text-controls">
+                        <div class="control-group">
+                            <label for="textInput" class="control-label">表情文字</label>
+                            <input type="text" id="textInput" class="text-input" placeholder="输入你的表情文字，如：我摊牌了！">
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="fontSelect" class="control-label">字体样式</label>
+                            <select id="fontSelect" class="font-select">
+                                <option value="Arial, sans-serif">默认字体</option>
+                                <option value="'Microsoft YaHei', sans-serif">微软雅黑</option>
+                                <option value="'SimHei', sans-serif">黑体</option>
+                                <option value="'KaiTi', serif">楷体</option>
+                                <option value="'FangSong', serif">仿宋</option>
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="fontSize" class="control-label">字体大小</label>
+                            <input type="range" id="fontSize" class="font-size-slider" min="20" max="80" value="40">
+                            <span class="font-size-value">40px</span>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="textColor" class="control-label">文字颜色</label>
+                            <input type="color" id="textColor" class="color-picker" value="#ffffff">
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label">文字效果</label>
+                            <div class="effect-buttons">
+                                <button type="button" class="effect-btn" data-effect="stroke">
+                                    <i class="fas fa-border-all"></i> 描边
+                                </button>
+                                <button type="button" class="effect-btn" data-effect="shadow">
+                                    <i class="fas fa-cloud"></i> 阴影
+                                </button>
+                                <button type="button" class="effect-btn" data-effect="gradient">
+                                    <i class="fas fa-palette"></i> 渐变
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 预览区域 -->
+                <section class="preview-section" id="previewSection" style="display: none;">
+                    <h2 class="section-title">
+                        <i class="fas fa-eye"></i>
+                        预览效果
+                    </h2>
+                    <div class="preview-container">
+                        <canvas id="previewCanvas" class="preview-canvas"></canvas>
+                        <div class="preview-controls">
+                            <button type="button" class="control-btn" id="resetText">
+                                <i class="fas fa-undo"></i> 重置文字
+                            </button>
+                            <button type="button" class="control-btn" id="clearCanvas">
+                                <i class="fas fa-trash"></i> 清空画布
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 下载区域 -->
+                <section class="download-section" id="downloadSection" style="display: none;">
+                    <h2 class="section-title">
+                        <i class="fas fa-download"></i>
+                        下载表情包
+                    </h2>
+                    <div class="download-controls">
+                        <div class="format-selector">
+                            <label class="control-label">下载格式</label>
+                            <div class="format-buttons">
+                                <button type="button" class="format-btn active" data-format="png">
+                                    <i class="fas fa-file-image"></i> PNG
+                                </button>
+                                <button type="button" class="format-btn" data-format="jpg">
+                                    <i class="fas fa-file-image"></i> JPG
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="quality-selector">
+                            <label class="control-label">图片质量</label>
+                            <input type="range" id="qualitySlider" class="quality-slider" min="0.5" max="1" step="0.1" value="0.9">
+                            <span class="quality-value">90%</span>
+                        </div>
+                        
+                        <button type="button" class="download-btn" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            下载表情包
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                © 2024 表情包生成器 - 基于HTML5+CSS+JavaScript开发
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件 -->
+    <script src="js/main.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/download.js"></script>
+</body>
+</html> 

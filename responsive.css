@@ -1,0 +1,459 @@
+/* 表情包生成器 - 响应式样式文件 */
+
+/* 大屏幕设备 (1200px 及以上) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .function-area {
+        max-width: 1000px;
+    }
+    
+    .header-title {
+        font-size: 3rem;
+    }
+    
+    .header-title i {
+        font-size: 2.5rem;
+    }
+}
+
+/* 中等屏幕设备 (768px - 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .header-title {
+        font-size: 2.2rem;
+    }
+    
+    .header-title i {
+        font-size: 1.8rem;
+    }
+}
+
+/* 平板设备 (768px - 1023px) */
+@media (max-width: 1023px) {
+    .function-area {
+        max-width: 100%;
+    }
+    
+    .upload-section,
+    .text-section,
+    .preview-section,
+    .download-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .upload-area {
+        min-height: 180px;
+    }
+    
+    .upload-icon {
+        font-size: 2.5rem;
+    }
+    
+    .upload-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* 手机设备 (480px - 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .header {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .header-title {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .header-title i {
+        font-size: 1.5rem;
+    }
+    
+    .header-subtitle {
+        font-size: 1rem;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .main {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .function-area {
+        gap: var(--spacing-lg);
+    }
+    
+    .upload-section,
+    .text-section,
+    .preview-section,
+    .download-section {
+        padding: var(--spacing-md);
+        border-radius: var(--radius-lg);
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .upload-area {
+        min-height: 150px;
+    }
+    
+    .upload-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .upload-icon {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .upload-text {
+        font-size: 1rem;
+    }
+    
+    .upload-hint {
+        font-size: 0.8rem;
+    }
+    
+    .upload-btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.9rem;
+    }
+    
+    .text-controls {
+        gap: var(--spacing-md);
+    }
+    
+    .control-group {
+        gap: var(--spacing-xs);
+    }
+    
+    .control-label {
+        font-size: 0.9rem;
+    }
+    
+    .text-input,
+    .font-select {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+    
+    .effect-buttons {
+        gap: var(--spacing-xs);
+    }
+    
+    .effect-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+    
+    .preview-canvas {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .preview-controls {
+        gap: var(--spacing-sm);
+    }
+    
+    .control-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+    
+    .format-buttons {
+        gap: var(--spacing-xs);
+    }
+    
+    .format-btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+    
+    .download-btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 1rem;
+    }
+}
+
+/* 小屏手机设备 (320px - 479px) */
+@media (max-width: 479px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .header-title {
+        font-size: 1.5rem;
+    }
+    
+    .header-title i {
+        font-size: 1.2rem;
+    }
+    
+    .header-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .function-area {
+        gap: var(--spacing-md);
+    }
+    
+    .upload-section,
+    .text-section,
+    .preview-section,
+    .download-section {
+        padding: var(--spacing-sm);
+        border-radius: var(--radius-md);
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .upload-area {
+        min-height: 120px;
+    }
+    
+    .upload-content {
+        padding: var(--spacing-md);
+    }
+    
+    .upload-icon {
+        font-size: 1.5rem;
+    }
+    
+    .upload-text {
+        font-size: 0.9rem;
+    }
+    
+    .upload-hint {
+        font-size: 0.75rem;
+    }
+    
+    .text-controls {
+        gap: var(--spacing-sm);
+    }
+    
+    .control-group {
+        gap: var(--spacing-xs);
+    }
+    
+    .control-label {
+        font-size: 0.85rem;
+    }
+    
+    .text-input,
+    .font-select {
+        padding: var(--spacing-xs);
+        font-size: 0.85rem;
+    }
+    
+    .effect-buttons {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .effect-btn {
+        justify-content: center;
+        padding: var(--spacing-xs);
+        font-size: 0.75rem;
+    }
+    
+    .preview-controls {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .control-btn {
+        justify-content: center;
+        padding: var(--spacing-xs);
+        font-size: 0.75rem;
+    }
+    
+    .format-buttons {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .format-btn {
+        justify-content: center;
+        padding: var(--spacing-xs);
+        font-size: 0.75rem;
+    }
+    
+    .download-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.9rem;
+    }
+    
+    .footer {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .footer-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* 横屏模式优化 */
+@media (orientation: landscape) and (max-height: 600px) {
+    .header {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .header-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .header-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .main {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .function-area {
+        gap: var(--spacing-md);
+    }
+    
+    .upload-area {
+        min-height: 100px;
+    }
+    
+    .upload-content {
+        padding: var(--spacing-md);
+    }
+    
+    .upload-icon {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-xs);
+    }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .upload-icon,
+    .section-title i {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .header,
+    .footer,
+    .upload-btn,
+    .control-btn,
+    .download-btn {
+        display: none !important;
+    }
+    
+    .main {
+        padding: 0;
+    }
+    
+    .function-area {
+        gap: var(--spacing-md);
+    }
+    
+    .preview-canvas {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white: #1f2937;
+        --gray-50: #111827;
+        --gray-100: #1f2937;
+        --gray-200: #374151;
+        --gray-300: #4b5563;
+        --gray-400: #6b7280;
+        --gray-500: #9ca3af;
+        --gray-600: #d1d5db;
+        --gray-700: #e5e7eb;
+        --gray-800: #f3f4f6;
+        --gray-900: #f9fafb;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    }
+    
+    .header,
+    .footer {
+        background: rgba(31, 41, 55, 0.95);
+        border-color: var(--gray-600);
+    }
+    
+    .header-title {
+        color: var(--primary-color);
+    }
+    
+    .header-subtitle,
+    .footer-text {
+        color: var(--gray-400);
+    }
+}
+
+/* 减少动画效果 (用户偏好) */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .fade-in {
+        animation: none;
+    }
+    
+    .loading::after {
+        animation: none;
+    }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0000ff;
+        --primary-hover: #0000cc;
+        --success-color: #008000;
+        --danger-color: #ff0000;
+    }
+    
+    .upload-area,
+    .text-input,
+    .font-select {
+        border-width: 3px;
+    }
+    
+    .upload-btn,
+    .download-btn {
+        border: 2px solid var(--gray-900);
+    }
+} 
